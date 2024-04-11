@@ -27,4 +27,5 @@ Args:
 void printMap();
 /*
 Print the map
+by row and column
 */
