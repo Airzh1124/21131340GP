@@ -3,6 +3,16 @@
 #include <iostream>
 #include <vector>
 
+int getRows();
+/*
+Return the number of rows in the map
+*/
+
+int getCols();
+/*
+Return the number of columns in the map
+*/
+
 char getCell(int x, int y);
 /*
 Return the character at the given coordinates
@@ -30,8 +40,12 @@ Representations:
     2 represents the destroyed cell
 */ 
 
-void printMap();
+void printPMap();
 /*
-Print the map
-by row and column
+Print the map of the player
+*/
+
+void printCMap();
+/*
+Print the map of the computer
 */
