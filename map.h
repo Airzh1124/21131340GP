@@ -4,49 +4,61 @@
 #include <vector>
 #include <iomanip>
 
-int getRows();
-/*
-Return the number of rows in the map
-*/
+using namespace std;
 
-int getCols();
-/*
-Return the number of columns in the map
-*/
+class Map {
+private:
+    vector<vector<int> > grid;
 
-char getCell(int x, int y);
-/*
-Return the character at the given coordinates
+public:
+    Map(int rows, int cols);
+    /*
+    Constructor of the Map class
+    */
+    int getRows();
+    /*
+    Return the number of rows in the map
+    */
 
-Args:
-    x (int): x coordinate
-    y (int): y coordinate
+    int getCols();
+    /*
+    Return the number of columns in the map
+    */
 
-Returns:
-    char: the character at the given coordinates
-*/
+    int getCell(int x, int y);
+    /*
+    Return the character at the given coordinates
 
-void setCell(int x, int y, int value);
-/*
-Set the character at the given coordinates
+    Args:
+        x (int): x coordinate
+        y (int): y coordinate
 
-Args:
-    x (int): x coordinate
-    y (int): y coordinate
-    value (int): the value to set
+    Returns:
+        char: the character at the given coordinates
+    */
 
-Representations:
-    0 represents empty cell
-    1 represents the selected cell
-    2 represents the destroyed cell
-*/ 
+    void setCell(int x, int y, int value);
+    /*
+    Set the character at the given coordinates
 
-void printPMap();
-/*
-Print the map of the player
-*/
+    Args:
+        x (int): x coordinate
+        y (int): y coordinate
+        value (int): the value to set
 
-void printCMap();
-/*
-Print the map of the computer
-*/
+    Representations:
+        0 represents empty cell
+        1 represents the selected cell
+        2 represents the destroyed cell
+    */ 
+
+    void printPMap();
+    /*
+    Print the map of the player
+    */
+
+    void printCMap();
+    /*
+    Print the map of the computer
+    */
+};
