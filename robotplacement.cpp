@@ -5,8 +5,6 @@
 
 using namespace std;
 
-//g++ -pedantic-errors -std=c++11 robotplacement.cpp map.cpp  -o test
-
 int main(){
     int x, y, value, placementcout = 0, Shiplen, Shipwei, Shiprow, Shipcol;
     cout << "Please enter the size of the map (row column)." << endl;
