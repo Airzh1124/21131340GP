@@ -1,5 +1,5 @@
 #include "shipplacement.h"
-#include "playeractions.h"
+
 
 list<pair<int, int> > Shipshape = {make_pair(2, 2), make_pair(2, 3), make_pair(2, 4), make_pair(3, 5)};
 
