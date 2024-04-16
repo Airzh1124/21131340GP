@@ -7,7 +7,7 @@ shipplacement.o: shipplacement.cpp shipplacement.h
 robotplacement.o: map.o shipplacement.o robotplacement.cpp
 	g++ -pedantic-errors -std=c++11 -c robotplacement.cpp
 
-test: map.o playerplacement.o 
+test: test.cpp map.cpp playeractions.cpp
 	g++ -pedantic-errors -std=c++11 map.cpp test.cpp playeractions.cpp -o test -l ncurses
 
 clean:
