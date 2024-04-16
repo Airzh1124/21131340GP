@@ -1,5 +1,14 @@
 #include "playeractions.h"
 
+bool isNumber(const string &str) {
+    for (char c : str) {
+        if (!isdigit(c)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void instruction(const string &s) {
     int terminalWidth, terminalHeight;
     getmaxyx(stdscr, terminalHeight, terminalWidth);
@@ -16,18 +25,38 @@ void instruction(const string &s) {
     refresh();
 }
 
+int getUserInput(const string &prompt) {
+    string input;
+    
+    do {
+        instruction(prompt);
+        refresh();
+
+        char inputBuffer[100];
+        getstr(inputBuffer);
+        input = inputBuffer;
+
+        if (!isNumber(input)) {
+            instruction("Invalid input. Please try again. (Press any key to continue)");
+            getch();
+            refresh();
+        }
+
+    } while (!isNumber(input));
+
+    return stoi(input);
+}
+
 vector<int> getPositions(Map &map){
   vector<int> positions;
   while (true){
 
+    int row, col;
+
     map.printPMap();
     map.printCMap();
-    instruction("Please enter the chosen x position: ");
-    refresh();
-    int row = getch()-'0';
-    instruction("Please enter the chosen y position: ");
-    refresh();
-    int col = getch()-'0';
+    row = getUserInput("Please enter the chosen x position: ");
+    col = getUserInput("Please enter the chosen y position: ");
     if (row >= 0 && row < map.getCols() && col >= 0 && col < map.getRows()){
       if (map.getCell(row, col) != 1){
         instruction("");
@@ -40,7 +69,7 @@ vector<int> getPositions(Map &map){
       }
     }
     else{
-      instruction("Invalid input, please try again!(Press any key to continue)");
+      instruction("Coordinates are out of range, please try again!(Press any key to continue)");
       getch();
         }
     }

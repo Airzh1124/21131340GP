@@ -5,6 +5,12 @@
 #include <string>
 #include "map.h"
 
+bool isNumber(const string &str);
+// check if the input is a number
+
+int getUserInput(const string &prompt);
+// get the input from user(only number)
+
 void instruction(const string &s);
 // print the instruction on the screen
 

@@ -7,8 +7,9 @@ using namespace std;
 
 int main() {
     initscr();
-    
-    Map map(5,5);
+    echo();
+
+    Map map(20,20);
     map.setCell(1, 1, 1);
     map.setCell(2,2,2);
     while (true)
