@@ -113,7 +113,6 @@ void changeValue(vector<int> Postions, Map &map){
       for (int j = 0; j < map.getRows(); j++){
         if (map.getCell(i, j) == value){
           map.setCell(row, col, 1);
-          map.printPMap();
           map.printCMap();
         }
       }
