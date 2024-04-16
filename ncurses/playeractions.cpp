@@ -7,14 +7,30 @@
 int row;
 int col;
 
+void instruction(const string &s) {
+    int terminalWidth, terminalHeight;
+    getmaxyx(stdscr, terminalHeight, terminalWidth);
+
+    for (int i = 1; i <= 4; i++) {
+        move(terminalHeight - i, 0);
+        clrtoeol();
+    }
+
+    move(terminalHeight - 4, 0);
+    
+    const char *cstr = s.c_str();
+    printw("%s", cstr);
+    refresh();
+}
+
 
 void getPositions(Map &map){
   bool a = false;
   while ( a == false ){
-    mvprintw("Please enter the chosen x position: ");
+    instruction("Please enter the chosen x position: ");
     refresh();
     int row = getch();
-    mvprintw("Please enter the chosen y position: ");
+    instruction("Please enter the chosen y position: ");
     refresh();
     int col = getch();
     if (row >= 0 && row < map.getCols() && col >= 0 && col < map.getRows()){
@@ -23,7 +39,7 @@ void getPositions(Map &map){
       }
     }
     else{
-      mvprintw("Invalid input, please try again");
+      instruction("Invalid input, please try again");
     }
 }
 
@@ -32,11 +48,11 @@ void getPositions(Map &map){
 void changeValue(int row, int col){
   int value = map.getCell(row, col);
   if (value == 0){
-    mvprintw("Oops! You miss the shot!")
+    instruction("Oops! You miss the shot!")
     map.setCell(row, col, 1);
   }
   else{
-    mvprintw("Congratulations! you hit one ship successfully! ");
+    instruction("Congratulations! you hit one ship successfully! ");
     for (int i = 0; i < map.getCols(); i++){
       for (int j = 0; j < map.getRows(); j++){
         if (map.getCell(i, j) == value){
