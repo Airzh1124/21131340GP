@@ -40,6 +40,7 @@ void getPositions(Map &map){
     }
     else{
       instruction("Invalid input, please try again");
+        }
     }
 }
 
