@@ -53,15 +53,13 @@ void changeValue(vector<int> Postions, Map &map){
   int col = Postions[1];
   int value = map.getCell(row, col);
   if (value == 0){
-    instruction("Oops! You miss the shot!(Press any key to continue)");
-    getch();
     map.setCell(row, col, 1);
     map.printPMap();
     map.printCMap();
+    instruction("Oops! You miss the shot!(Press any key to continue)");
+    getch();
   }
   else{
-    instruction("Congratulations! you hit one ship successfully!(Press any key to continue)");
-    getch();
     for (int i = 0; i < map.getCols(); i++){
       for (int j = 0; j < map.getRows(); j++){
         if (map.getCell(i, j) == value){
@@ -71,6 +69,8 @@ void changeValue(vector<int> Postions, Map &map){
         }
       }
     }
+    instruction("Congratulations! you hit one ship successfully!(Press any key to continue)");
+    getch();
   }
 
   
