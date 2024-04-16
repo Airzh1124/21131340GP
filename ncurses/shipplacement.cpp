@@ -1,4 +1,5 @@
 #include "shipplacement.h"
+#include "playeractions.h"
 
 list<pair<int, int> > Shipshape = {make_pair(2, 2), make_pair(2, 3), make_pair(2, 4), make_pair(3, 5)};
 
@@ -23,12 +24,7 @@ bool overlap(Map &map, int row, int cols, int Shiplen, int Shipwei){
 
 void printShape(){
 
-    int max_y, max_x;
-    getmaxyx(stdscr, max_y, max_x);
-    move(max_y - 3, 0);
-    clrtoeol();
-
-    printw("Available ship choice are {Length, Width}: ");
+    caution("Available ship choice are {Length, Width}: ");
     for(const auto coordinate: Shipshape){
         int x = coordinate.first;
         int y = coordinate.second;
@@ -67,44 +63,25 @@ void deleteShape(int Shiplen, int Shipwei){
 void getAndplaceShape(Map &map){
     int Shiplen, Shipwei, Shiprow, Shipcol;
     int max_y, max_x;
-
-    echo();
     getmaxyx(stdscr, max_y, max_x);
     printShape();
-    move(max_y - 2, 0);
-    printw("Please choose one pair from the available set and input numbers only(e.g. 2 3).");
-    refresh();
-    move(max_y - 1, 0);
-    scanf("%d %d", &Shiplen, &Shipwei);
+    Shiplen = getUserInput("Please enter the length of the ship: ");
+    Shipwei = getUserInput("Please enter the width of the ship: ");
     if (Shapeexist(Shiplen, Shipwei) == true){
-        move(max_y - 2, 0);
-        clrtoeol();
-        printw("Please enter the coordinates of the top-left position where you want to place the ship (e.g. 2 2 (row column)).");
-        refresh();
-        move(max_y - 1, 0);
-        scanf("%d %d", &Shiprow, &Shipcol);
+        Shiprow = getUserInput("Please enter the chosen x position: ");
+        Shipcol = getUserInput("Please enter the chosen y position: ");
         if (overlap(map, Shiprow, Shipcol, Shiplen, Shipwei) == false){
             placeShip(map, Shiprow, Shipcol, Shiplen, Shipwei, 1);
             deleteShape(Shiplen, Shipwei);
+            printShape();
         }
         else{
-            move(max_y - 2, 0);
-            clrtoeol();
-            move(max_y - 1, 0);
-            clrtoeol();
-            move(max_y - 3, 0);
-            printw("Sorry you cannot place here, please try in another cell.");
-            refresh();
+            instruction("Sorry you cannot place here, please try in another cell.(Press any key to continue)");
+            getch();
         }
     }
     else{
-        move(max_y - 2, 0);
-        clrtoeol();
-        move(max_y - 1, 0);
-        clrtoeol();
-        move(max_y - 3, 0);
-        clrtoeol();
-        printw("Sorry, the shape you entered is not in the list, please try again.");
-        refresh();
+        instruction("Sorry, the shape you entered is not in the list, please try again.(Press any key to continue)");
+        getch();
     }
 }

@@ -2,16 +2,22 @@
 #include <string>
 #include "playeractions.h"
 #include "map.h"
+#include "shipplacement.h"
 
 using namespace std;
 
 int main() {
     initscr();
-    echo();
 
     Map map(20,20);
-    map.setCell(1, 1, 1);
-    map.setCell(2,2,2);
+
+    while (Shipshape.empty() == false){
+        map.printPMap();
+        getAndplaceShape(map);
+    }
+
+    rmcaution();
+
     while (true)
     {
         vector<int> positions =  getPositions(map);

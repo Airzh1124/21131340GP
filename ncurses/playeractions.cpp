@@ -9,6 +9,27 @@ bool isNumber(const string &str) {
     return true;
 }
 
+void caution(const string &s) {
+    int terminalWidth, terminalHeight;
+    getmaxyx(stdscr, terminalHeight, terminalWidth);
+
+    move(terminalHeight - 5, 0);
+    
+    const char *cstr = s.c_str();
+    printw("%s", cstr);
+    refresh();
+}
+
+void rmcaution() {
+    int terminalWidth, terminalHeight;
+    getmaxyx(stdscr, terminalHeight, terminalWidth);
+
+    move(terminalHeight - 5, 0);
+    
+    clrtoeol();
+    refresh();
+}
+
 void instruction(const string &s) {
     int terminalWidth, terminalHeight;
     getmaxyx(stdscr, terminalHeight, terminalWidth);
