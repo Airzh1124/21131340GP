@@ -4,6 +4,13 @@
 #include <vector>
 #include map.h
 
+int row;
+int col;
+
+
+void getPositions();
+// get the input from user and store them
+
 int choosePosition(int row, int col);
 // choose a position and check which integer it is, if it is a nonzero number, the delete it from the map.
 
