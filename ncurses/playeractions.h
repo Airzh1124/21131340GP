@@ -2,16 +2,16 @@
 
 #include <ncurses.h>
 #include <vector>
-#include map.h
+#include <string>
+#include "map.h"
 
-int row;
-int col;
+void instruction(const string &s);
+// print the instruction on the screen
 
-
-void getPositions();
+vector<int> getPositions(Map &map);
 // get the input from user and store them
 
-void changeValue(int row, int col);
+void changeValue(vector<int> Postions, Map &map);
 // choose a position and change it to chosen status, it will judege wether the player successfully hit the ship.
 
 bool gameStatus(Map &map);
