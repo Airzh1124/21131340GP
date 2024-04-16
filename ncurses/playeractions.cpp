@@ -75,7 +75,6 @@ vector<int> getPositions(Map &map){
 
     int row, col;
 
-    map.printPMap();
     map.printCMap();
     row = getUserInput("Please enter the chosen x position: ");
     col = getUserInput("Please enter the chosen y position: ");
@@ -105,7 +104,6 @@ void changeValue(vector<int> Postions, Map &map){
   int value = map.getCell(row, col);
   if (value == 0){
     map.setCell(row, col, 1);
-    map.printPMap();
     map.printCMap();
     instruction("Oops! You miss the shot!(Press any key to continue)");
     getch();
