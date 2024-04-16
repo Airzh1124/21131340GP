@@ -14,7 +14,8 @@ void caution(const string &s) {
     getmaxyx(stdscr, terminalHeight, terminalWidth);
 
     move(terminalHeight - 5, 0);
-    
+    clrtoeol();
+
     const char *cstr = s.c_str();
     printw("%s", cstr);
     refresh();
@@ -25,7 +26,7 @@ void rmcaution() {
     getmaxyx(stdscr, terminalHeight, terminalWidth);
 
     move(terminalHeight - 5, 0);
-    
+
     clrtoeol();
     refresh();
 }
