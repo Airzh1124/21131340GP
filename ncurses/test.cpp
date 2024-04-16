@@ -9,23 +9,21 @@ using namespace std;
 int main() {
     initscr();
 
-    Map map(20,20);
+    Map map1(20,20);
+    Map map2(20,20);
 
     while (Shipshape.empty() == false){
-        map.printPMap();
-        getAndplaceShape(map);
+        map1.printPMap();
+        getAndplaceShape(map1);
     }
 
     rmcaution();
 
     while (true)
     {
-        vector<int> positions =  getPositions(map);
-        changeValue(positions, map);
+        vector<int> positions =  getPositions(map2);
+        changeValue(positions, map2);
     }
-    
-    vector<int> positions =  getPositions(map);
-    changeValue(positions, map);
 
     refresh();
     getch();
