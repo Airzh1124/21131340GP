@@ -30,7 +30,8 @@ void robotplacement(Map &map){
 
         } while (overlap(map, Shiprow, Shipcol, Shiplen, Shipwei) == true);
         
-        placeShip(map, Shiprow, Shipcol, Shiplen, Shipwei, 1);
+        placeShip(map, Shiprow, Shipcol, Shiplen, Shipwei, Shipnom);
+        Shipnom++;
         loopcount++;
 
         if (loopcount == 5){

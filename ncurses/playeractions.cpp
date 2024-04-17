@@ -75,11 +75,11 @@ vector<int> getPositions(Map &map){
 
     int row, col;
 
-    map.printCMap();
+    map.printDMap();
     row = getUserInput("Please enter the chosen x position: ");
     col = getUserInput("Please enter the chosen y position: ");
     if (row >= 0 && row < map.getCols() && col >= 0 && col < map.getRows()){
-      if (map.getCell(row, col) != 1){
+      if (map.getCell(row, col) == 0){
         instruction("");
         positions.push_back(row);
         positions.push_back(col);
@@ -98,13 +98,13 @@ vector<int> getPositions(Map &map){
 
 
 
-void changeValue(vector<int> Postions, Map &map){
+void changeValue(vector<int> Postions, Map &map, Map &map1){
   int row = Postions[0];
   int col = Postions[1];
   int value = map.getCell(row, col);
   if (value == 0){
-    map.setCell(row, col, 1);
-    map.printCMap();
+    map1.setCell(row, col, 1);
+    map1.printDMap();
     instruction("Oops! You miss the shot!(Press any key to continue)");
     getch();
   }
@@ -112,8 +112,9 @@ void changeValue(vector<int> Postions, Map &map){
     for (int i = 0; i < map.getCols(); i++){
       for (int j = 0; j < map.getRows(); j++){
         if (map.getCell(i, j) == value){
-          map.setCell(row, col, 1);
-          map.printCMap();
+          map1.setCell(i, j, value);
+          map.setCell(i, j, 1);
+          map1.printDMap();
         }
       }
     }

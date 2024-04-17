@@ -52,6 +52,46 @@ void Map::printPMap() {
     refresh();
 }
 
+void Map::printDMap() {
+
+    int terminalWidth, terminalHeight;
+    getmaxyx(stdscr, terminalHeight, terminalWidth);
+
+    int mapWidth = (grid[0].size() + 1) * 3; 
+    int mapHeight = (grid.size() + 1);
+    int startX = (terminalWidth - mapWidth) / 2;
+    int startY = mapHeight + 2;
+
+    int rownumber = startY + 1;
+    
+    for (int i = 0; i < grid.size(); i++) {
+        mvprintw(rownumber, startX, "%3d ", i);
+        for (int j = 0; j < grid[i].size(); j++) {
+            mvprintw(startY, startX + (j * 3) + 2, "%3d ", j);
+            if (grid[i][j] == 0) {
+                mvprintw(rownumber, startX + (j * 3) + 3, " . ");
+            }
+            else if (grid[i][j] == 2){
+                mvprintw(rownumber, startX + (j * 3) + 3, " A ");
+            }
+            else if (grid[i][j] == 3){
+                mvprintw(rownumber, startX + (j * 3) + 3, " B ");
+            }
+            else if (grid[i][j] == 4){
+                mvprintw(rownumber, startX + (j * 3) + 3, " C ");
+            }
+            else if (grid[i][j] == 5){
+                mvprintw(rownumber, startX + (j * 3) + 3, " D ");
+            }
+            else if (grid[i][j] == 1){
+                mvprintw(rownumber, startX + (j * 3) + 3, " X ");
+            }
+        }
+        rownumber++;
+    }
+    refresh();
+}
+
 void Map::printCMap() {
 
     int terminalWidth, terminalHeight;

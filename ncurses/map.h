@@ -56,6 +56,8 @@ public:
     Print the map of the player
     */
 
+    void printDMap();
+
     void printCMap();
     /*
     Print the map of the computer

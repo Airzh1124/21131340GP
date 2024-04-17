@@ -31,7 +31,7 @@ Arguments:
 vector<int> getPositions(Map &map);
 // get the input from user and store them
 
-void changeValue(vector<int> Postions, Map &map);
+void changeValue(vector<int> Postions, Map &map, Map &map1);
 // choose a position and change it to chosen status, it will judege wether the player successfully hit the ship.
 
 bool gameStatus(Map &map);

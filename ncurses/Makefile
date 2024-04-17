@@ -7,13 +7,11 @@ shipplacement.o: shipplacement.cpp shipplacement.h
 robotplacement.o: map.o shipplacement.o robotplacement.cpp
 	g++ -pedantic-errors -std=c++11 -c robotplacement.cpp
 
-
-
-test: test.cpp map.cpp playeractions.cpp shipplacement.cpp
-	g++ -pedantic-errors -std=c++11 map.cpp test.cpp playeractions.cpp shipplacement.cpp -o test -l ncurses
+test: test.cpp map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp
+	g++ -pedantic-errors -std=c++11 map.cpp test.cpp playeractions.cpp robotactions.cpp shipplacement.cpp -o test -l ncurses
 
 robot: map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp robottest.cpp
 	g++ -pedantic-errors -std=c++11 map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp robottest.cpp -o robot -l ncurses
 
 clean:
-	rm -f test map.o shipplacement.o robotplacement.o
+	rm -f test map.o shipplacement.o robotplacement.o 
