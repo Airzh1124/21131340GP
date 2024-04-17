@@ -24,4 +24,4 @@ bool Shapeexist(int Shiplen, int Shipwei);
 void deleteShape(int Shiplen, int Shipwei);
 //Delete the shape pair from the list after the user has already placed it.
 
-void getAndplaceShape(Map &map);
+void getAndplaceShape(Map &map, int Shipnom);

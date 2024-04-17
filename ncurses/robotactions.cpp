@@ -11,7 +11,7 @@ int randomgenerator(int max, int min, int ran){
 }
 
 void robotplacement(Map &map){
-    int Shiplen, Shipwei, Shiprow, Shipcol, Shipnom = 2;
+    int Shiplen, Shipwei, Shiprow, Shipcol, Shipnom = 2, ran = 0;
     int max_y, max_x, loopcount = 0;
     getmaxyx(stdscr, max_y, max_x);
     for (const auto& pair: Shipshape){
@@ -25,7 +25,8 @@ void robotplacement(Map &map){
         }
 
         do{
-            Shipcol = randomgenerator(map.getCols()+1, 0, 1);
+            ran++;
+            Shipcol = randomgenerator(map.getCols()+1, 0, ran);
             Shiprow = randomgenerator(map.getRows()+1, 0, Shipcol);
 
         } while (overlap(map, Shiprow, Shipcol, Shiplen, Shipwei) == true);
@@ -38,4 +39,33 @@ void robotplacement(Map &map){
             return;
         }
     }
+}
+
+void robotattack(Map &map, Map &map1, int &ran){
+    int Shipcol, Shiprow;
+    do{
+        ran++;
+        Shipcol = randomgenerator(map.getCols()+1, 0, ran);
+        Shiprow = randomgenerator(map.getRows()+1, 0, Shipcol);
+    }while (map1.getCell(Shiprow, Shipcol) != 0);
+    int value = map.getCell(Shiprow, Shipcol);
+
+    if (value == 0){
+        map1.setCell(Shiprow, Shipcol, 1);
+        map1.printDMap();
+    }
+    else{
+        for (int i = 0; i < map.getCols(); i++){
+            for (int j = 0; j < map.getRows(); j++){
+                if (map.getCell(i, j) == value){
+                    map1.setCell(i, j, value);
+                    map.setCell(i, j, 1);
+                    map1.printDMap();
+                }
+            }
+        }
+    }
+    instruction("The robot had attacked the coordinate: ");
+    printw("%d %d", Shiprow, Shipcol);
+    return;
 }

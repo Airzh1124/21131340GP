@@ -60,7 +60,7 @@ void deleteShape(int Shiplen, int Shipwei){
     }
 }
 
-void getAndplaceShape(Map &map){
+void getAndplaceShape(Map &map, int Shipnom){
     int Shiplen, Shipwei, Shiprow, Shipcol;
     int max_y, max_x;
     getmaxyx(stdscr, max_y, max_x);
@@ -71,7 +71,7 @@ void getAndplaceShape(Map &map){
         Shiprow = getUserInput("Please enter the chosen x position: ");
         Shipcol = getUserInput("Please enter the chosen y position: ");
         if (overlap(map, Shiprow, Shipcol, Shiplen, Shipwei) == false){
-            placeShip(map, Shiprow, Shipcol, Shiplen, Shipwei, 1);
+            placeShip(map, Shiprow, Shipcol, Shiplen, Shipwei, Shipnom);
             deleteShape(Shiplen, Shipwei);
             printShape();
         }
