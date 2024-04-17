@@ -25,8 +25,8 @@ void robotplacement(Map &map){
         }
 
         do{
-            Shipcol = randomgenerator(map.getCols(), 0, 1);
-            Shiprow = randomgenerator(map.getRows(), 0, Shipcol);
+            Shipcol = randomgenerator(map.getCols()+1, 0, 1);
+            Shiprow = randomgenerator(map.getRows()+1, 0, Shipcol);
 
         } while (overlap(map, Shiprow, Shipcol, Shiplen, Shipwei) == true);
         
