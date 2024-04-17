@@ -139,12 +139,3 @@ bool gameStatus(Map &map){
   }
   return game;
 }
-
-
-
-
-
-
-
-
-
