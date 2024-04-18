@@ -37,8 +37,8 @@ void masterRobotattack(Map &map, Map &map1, int &ran){
     for (int i = 0; i < map.getCols(); i++){
             for (int j = 0; j < map.getRows(); j++){
               if (map.getCell(i,j) != 0 && map.getCell(i,j) != 1){ //找出所有存有船只的位置，并以vector形式存储
-                vector a = <i, j>
-                targets.pushback(a)
+                vector<int> a = {i, j}
+                targets.push_back(a)
               } 
             }
     }
