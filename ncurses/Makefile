@@ -13,5 +13,8 @@ test: test.cpp map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp
 robot: map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp robottest.cpp
 	g++ -pedantic-errors -std=c++11 map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp robottest.cpp -o robot -l ncurses
 
+exrobot: map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp expertMode.cpp experttest.cpp
+	g++ -pedantic-errors -std=c++11 map.cpp playeractions.cpp shipplacement.cpp robotactions.cpp expertMode.cpp experttest.cpp -o exrobot -l ncurses
+
 clean:
-	rm -f test map.o shipplacement.o robotplacement.o 
+	rm -f test map.o shipplacement.o robotplacement.o robot exrobot test
