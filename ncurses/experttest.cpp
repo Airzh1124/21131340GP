@@ -11,10 +11,13 @@ using namespace std;
 int main() {
     initscr();
 
-    Map map1(10,10);
-    Map map2(10,10);
-    Map map3(10,10);
-    Map map4(10,10);
+    int maplen = getUserInput("Please enter the length of the map: ");
+    int mapwei = getUserInput("Please enter the width of the map: ");
+    
+    Map map1(maplen,mapwei);
+    Map map2(maplen,mapwei);
+    Map map3(maplen,mapwei);
+    Map map4(maplen,mapwei);
 
     instruction("Please wait a moment while our robot prepares the map.");
     
@@ -50,6 +53,11 @@ int main() {
         instruction("Congratulations! You have sunk all of the opponent's ships! You are the winner of this game! (press any key to exit)");
         refresh();
         getch();
+        rmcaution();
+        instruction("Above is the ship placement of the robot (press any key to exit)");
+        refresh();
+        map2.printCMap();
+        getch();
         break;
         }
 
@@ -66,6 +74,13 @@ int main() {
         if (gameStatus(map1) == true){
         rmcaution();
         instruction("OHHH NOOOO! The robot have sunk all of your ships, you lost this game! (press any key to exit)");
+        refresh();
+        getch();
+        rmcaution();
+        instruction("Above is the ship placement of the robot (press any key to exit)");
+        refresh();
+        map2.printCMap();
+        map4.printDMap();
         getch();
         break;
         }
