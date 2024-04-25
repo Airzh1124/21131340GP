@@ -1,8 +1,4 @@
 #include "robotactions.h"
-#include "map.h"
-#include "playeractions.h"
-#include "shipplacement.h"
-#include <time.h>
 
 int randomgenerator(int max, int min, int ran){
     srand(time(NULL)+ ran);
