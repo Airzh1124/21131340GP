@@ -16,7 +16,7 @@ void masterRobotattack(Map &map1, Map &map4, int &ran){
     int value = map1.getCell(x, y);
     for (int i = 0; i < map1.getCols(); i++){
             for (int j = 0; j < map1.getRows(); j++){
-                if (map.getCell(i, j) == value){
+                if (map1.getCell(i, j) == value){
                     map4.setCell(i, j, value);
                     map1.setCell(i, j, 1);
                     map4.printDMap();
