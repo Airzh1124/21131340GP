@@ -11,9 +11,9 @@ void masterRobotattack(Map &map, Map &map1, int &ran){
             }
     }
     int chosen = randomgenerator(targets.size(), 0, ran); //作弊选中一个vector
-    int i = targets[chosen][0];
-    int j = targets[chosen][1];
-    int value = map.getCell(i, j);
+    int x = targets[chosen][0];
+    int y = targets[chosen][1];
+    int value = map.getCell(x, y);
     for (int i = 0; i < map.getCols(); i++){
             for (int j = 0; j < map.getRows(); j++){
                 if (map.getCell(i, j) == value){
@@ -24,6 +24,6 @@ void masterRobotattack(Map &map, Map &map1, int &ran){
             }
         }
     instruction("The robot had activated its skill and attacked this coordinate: ");
-    printw("%d %d", i, j);
+    printw("%d %d", x, y);
     return;
 }
