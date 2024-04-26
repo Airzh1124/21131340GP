@@ -8,17 +8,17 @@ void easymode() {
     do{
         count++;
         if (count > 1){
-            if ((maplen < 7 || maplen > 12)&& (mapwei < 7 || mapwei > 12)){
+            if ((maplen < 8 || maplen > 12)&& (mapwei < 8 || mapwei > 12)){
                 instruction("Sorry, invalid length input and width input of the map");
                 refresh();
                 getch();
             }
             else{
-                if (maplen < 7 || maplen > 12){
+                if (maplen < 8 || maplen > 12){
                     instruction("Sorry, invalid length input of the map");
                     refresh();
                 }
-                if (mapwei < 7 || mapwei > 12){
+                if (mapwei < 8 || mapwei > 12){
                     instruction("Sorry, invalid width input of the map");
                     refresh();
                 }
@@ -26,12 +26,12 @@ void easymode() {
             }
         }
     rmcaution();
-    instruction("You can choose the size of the map, from 7*7 to 12*12, the map can be either square or rectangle (press any key to continue).");
+    instruction("You can choose the size of the map, from 8*8 to 12*12, the map can be either square or rectangle (press any key to continue).");
     refresh();
     getch();
     maplen = getUserInput("Please enter the length of the map: ");
     mapwei = getUserInput("Please enter the width of the map: ");
-    }while (maplen < 7 || maplen > 12 || mapwei < 7 || mapwei > 12);
+    }while (maplen < 8 || maplen > 12 || mapwei < 8 || mapwei > 12);
     
     Map map1(maplen,mapwei);
     Map map2(maplen,mapwei);
@@ -75,7 +75,7 @@ void easymode() {
         rmcaution();
         instruction("Above is the ship placement of the robot (press any key to exit)");
         refresh();
-        map2.printCMap();
+        map2.printDMap();
         getch();
         break;
         }
@@ -90,9 +90,9 @@ void easymode() {
         refresh();
         getch();
         rmcaution();
-        instruction("Above is the ship placement of the robot (press any key to exit)");
+        instruction("Above is the placement for the surviving ship of the robot (press any key to exit)");
         refresh();
-        map2.printCMap();
+        map2.printDMap();
         map4.printDMap();
         getch();
         break;
@@ -144,11 +144,11 @@ void hardmode() {
     rmcaution();
     int Shipnom = 2, ran = 0;
     while (Shipshape.empty() == false){
-        map1.printCMap();
+        map1.printDMap();
         getAndplaceShape(map1, Shipnom);
         Shipnom++;
     }
-    map1.printCMap();
+    map1.printDMap();
     refresh();
     rmcaution();
     instruction("Here is the final version of your map. (Press any key to continue)");
@@ -175,7 +175,7 @@ void hardmode() {
         rmcaution();
         instruction("Above is the ship placement of the robot (press any key to exit)");
         refresh();
-        map2.printCMap();
+        map2.printDMap();
         getch();
         break;
         }
@@ -190,9 +190,9 @@ void hardmode() {
         refresh();
         getch();
         rmcaution();
-        instruction("Above is the ship placement of the robot (press any key to exit)");
+        instruction("Above is the placement for the surviving ship of the robot (press any key to exit)");
         refresh();
-        map2.printCMap();
+        map2.printDMap();
         map4.printDMap();
         getch();
         break;
@@ -203,11 +203,35 @@ return;
 }
 
 void mastermode() {
-    instruction("You can choose the size of the map, from 7*7 to 20*20, the map can be either square or rectangle (press any key to continue).");
+    int maplen, mapwei, count = 0;
+
+    do{
+        count++;
+        if (count > 1){
+            if ((maplen < 8 || maplen > 20)&& (mapwei < 8 || mapwei > 20)){
+                instruction("Sorry, invalid length input and width input of the map");
+                refresh();
+                getch();
+            }
+            else{
+                if (maplen < 8 || maplen > 20){
+                    instruction("Sorry, invalid length input of the map");
+                    refresh();
+                }
+                if (mapwei < 8 || mapwei > 20){
+                    instruction("Sorry, invalid width input of the map");
+                    refresh();
+                }
+                getch();
+            }
+        }
+    rmcaution();
+    instruction("You can choose the size of the map, from 8*8 to 20*20, the map can be either square or rectangle (press any key to continue).");
     refresh();
     getch();
-    int maplen = getUserInput("Please enter the length of the map: ");
-    int mapwei = getUserInput("Please enter the width of the map: ");
+    maplen = getUserInput("Please enter the length of the map: ");
+    mapwei = getUserInput("Please enter the width of the map: ");
+    }while (maplen < 8 || maplen > 20 || mapwei < 8 || mapwei > 20);
     
     Map map1(maplen,mapwei);
     Map map2(maplen,mapwei);
@@ -220,11 +244,12 @@ void mastermode() {
     rmcaution();
     int Shipnom = 2, ran = 0;
     while (Shipshape.empty() == false){
-        map1.printCMap();
+        map1.printDMap();
         getAndplaceShape(map1, Shipnom);
         Shipnom++;
     }
-    map1.printCMap();
+
+    map1.printDMap();
     refresh();
     rmcaution();
     instruction("Here is the final version of your map. (Press any key to continue)");
@@ -251,7 +276,7 @@ void mastermode() {
         rmcaution();
         instruction("Above is the ship placement of the robot (press any key to exit)");
         refresh();
-        map2.printCMap();
+        map2.printDMap();
         getch();
         break;
         }
@@ -272,7 +297,7 @@ void mastermode() {
         refresh();
         getch();
         rmcaution();
-        instruction("Above is the ship placement of the robot (press any key to exit)");
+        instruction("Above is the placement for the surviving ship of the robot (press any key to exit)");
         refresh();
         map2.printCMap();
         map4.printDMap();

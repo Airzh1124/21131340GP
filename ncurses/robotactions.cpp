@@ -48,6 +48,7 @@ void robotattack(Map &map, Map &map1, int &ran){
 
     if (value == 0){
         map1.setCell(Shiprow, Shipcol, 1);
+        map.setCell(Shiprow, Shipcol, 1);
         map1.printDMap();
     }
     else{
