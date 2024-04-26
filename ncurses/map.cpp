@@ -72,16 +72,24 @@ void Map::printDMap() {
                 mvprintw(rownumber, startX + (j * 3) + 3, " . ");
             }
             else if (grid[i][j] == 2){
+                attron(COLOR_PAIR(1));
                 mvprintw(rownumber, startX + (j * 3) + 3, " A ");
+                attroff(COLOR_PAIR(1));
             }
             else if (grid[i][j] == 3){
+                attron(COLOR_PAIR(2));
                 mvprintw(rownumber, startX + (j * 3) + 3, " B ");
+                attroff(COLOR_PAIR(2));
             }
             else if (grid[i][j] == 4){
+                attron(COLOR_PAIR(3));
                 mvprintw(rownumber, startX + (j * 3) + 3, " C ");
+                attroff(COLOR_PAIR(3));
             }
             else if (grid[i][j] == 5){
+                attron(COLOR_PAIR(4));
                 mvprintw(rownumber, startX + (j * 3) + 3, " D ");
+                attroff(COLOR_PAIR(4));
             }
             else if (grid[i][j] == 1){
                 mvprintw(rownumber, startX + (j * 3) + 3, " X ");

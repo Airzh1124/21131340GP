@@ -1,7 +1,7 @@
 #include "shipplacement.h"
 
 
-list<pair<int, int> > Shipshape = {make_pair(2, 2), make_pair(2, 3), make_pair(2, 4), make_pair(3, 5)};
+list<pair<int, int> > Shipshape = {make_pair(3, 5), make_pair(2, 4), make_pair(2, 3), make_pair(2, 2)};
 
 void placeShip(Map &map, int row, int cols, int Shiplen, int Shipwei, int ShipNom){
     for (int i = row; i < row + Shiplen; i++){

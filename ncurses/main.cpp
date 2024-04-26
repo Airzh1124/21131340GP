@@ -12,6 +12,18 @@
 int main() {
     initscr();
     curs_set(0);
+    keypad(stdscr, false); //unables the interpretation of function keys as special control sequences
+
+    if (has_colors() == false){
+        instruction("Sorry, your computer does not support colour, but you could still enjoy the black & white version of the game :)");
+        getch();
+        return 0;
+    }
+    start_color();
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(3, COLOR_BLUE, COLOR_BLACK);
+    init_pair(4, COLOR_GREEN, COLOR_BLACK);
 
     Print_map(ship);
     refresh();
