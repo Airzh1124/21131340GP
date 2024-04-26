@@ -1,8 +1,15 @@
 # Menu
-- [Game Trailer](#Game-Trailer)
+1. [Game Preview](#Game-Preview)  
+   I. [Game Trailer](#Game-Trailer)  
+   II. [Storyline](#Storyline)  
 
+2. [Game initialization](#Game-initialization)  
+   I. [Control](#Control)  
+   II. [Game Process](#Game-Process)  
 
-# How to play
+3. [Features implemented](#Features-implemented)  
+
+# Game Preview
 ## Game Trailer 
 
 ************Video here*************
@@ -16,14 +23,14 @@ You are chosen to represent your country in this utlimate contest of strategy an
 
 Prepare your wits, strategize carefully, and remember: the future of your nation rests in your hands.
 
-### Game initialization
+# Game initialization
  `make`
  
 `./main`
 
 **Be sure to wait for a moment before continuing to the next process**
 That's ALL!
-
+### Control 
 - Use keypad to control your choice
 - Use _Upper Arrow_ and _Lower Arrow_ to select in the menu
 - Press _Enter_ to confirm selection
@@ -42,7 +49,7 @@ You will have to do the following:
 
 
 
-### Features implemented
+# Features implemented
 - **Generation of random events**
    - The AI combating system uses psudo-probability to hit the player's ship
 - **Data structure used**
