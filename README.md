@@ -1,5 +1,5 @@
 # Menu
-
+- [Game Trailer](#Game-Trailer)
 
 
 # How to play
@@ -36,12 +36,19 @@ You will have to do the following:
 - **Enter** the map size that you wish to play on
 - Place your ships on ideal places by:
  - Choosing the **size of the ships** correspondingly
- - Placing them at 
- 
+ - Placing the ships by entering the **x-coordinate (no. row) first**, **followed by the y-coordinate (no.column)**
+ - The coordinate you entered will be the **_coordinate of the Top Left corner of the ship_**
+- Enter the coordinate of the places that you wish to hit
 
 
 
-### Features of game
-
-
-### Description
+### Features implemented
+- **Generation of random events**
+   - The AI combating system uses psudo-probability to hit the player's ship
+- **Data structure used**
+   - For storing the game map, we defined a class (see map.h)
+   - We used vector as the major STL container
+- **"Intelectual AI"**
+   - We grant robots intellegence by allow them to cheat - _Every 3 turns, they were about to directly locate one of the player's ship_
+- **In-game decorations**
+   - ASCII arts, colours pocesses by ncurses were used 
