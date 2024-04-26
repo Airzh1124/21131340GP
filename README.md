@@ -9,6 +9,11 @@
 
 **Remember to zoom in your terminal window to appropriate size to get better experience**
 
+### Storyline
+
+
+
+
 ### Game initialization
  `make`
  
@@ -23,3 +28,13 @@ That's ALL!
 - Press _Ctrl + C_ if you wish to **leave** the game early!
 
 
+### Gaming process
+
+
+
+
+
+### Features of game
+
+
+### Description
