@@ -1,3 +1,6 @@
+![Robots Ship battle](robots-ship-battle.png)
+
+
 # Menu
 1. [Game Preview](#Game-Preview)  
    I. [Game Trailer](#Game-Trailer)  
