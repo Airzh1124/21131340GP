@@ -63,8 +63,13 @@ int getUserInput(const string &prompt) {
             getch();
             refresh();
         }
+        if (input.empty()){
+          instruction("You did not input anything yet, please try again. (Press any key to continue)");
+          getch();
+          refresh();
+        }
 
-    } while (!isNumber(input));
+    } while ((!isNumber(input) | input.empty()));
 
     return stoi(input);
 }
