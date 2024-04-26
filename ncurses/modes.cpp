@@ -44,11 +44,11 @@ void easymode() {
     rmcaution();
     int Shipnom = 2, ran = 0;
     while (Shipshape.empty() == false){
-        map1.printCMap();
+        map1.printDMap();
         getAndplaceShape(map1, Shipnom);
         Shipnom++;
     }
-    map1.printCMap();
+    map1.printDMap();
     refresh();
     rmcaution();
     instruction("Here is the final version of your map. (Press any key to continue)");
