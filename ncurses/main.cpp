@@ -7,10 +7,11 @@
 #include "robotactions.h"
 #include "Starting_screen.h"
 #include "modes.h"
-#include "expertMode.h"
+#include "masterMode.h"
 
 int main() {
     initscr();
+    curs_set(0);
 
     Print_map(ship);
     refresh();
@@ -74,7 +75,7 @@ int main() {
                 break;
             }
             if (n == 3){
-                expertmode();
+                mastermode();
                 break;
             }
         }

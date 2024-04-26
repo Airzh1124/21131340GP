@@ -202,7 +202,7 @@ void hardmode() {
 return;
 }
 
-void expertmode() {
+void mastermode() {
     instruction("You can choose the size of the map, from 7*7 to 20*20, the map can be either square or rectangle (press any key to continue).");
     refresh();
     getch();

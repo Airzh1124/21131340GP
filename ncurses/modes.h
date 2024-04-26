@@ -6,10 +6,10 @@
 #include "map.h"
 #include "shipplacement.h"
 #include "robotactions.h"
-#include "expertMode.h"
+#include "masterMode.h"
 
 void easymode();
 
 void hardmode();
 
-void expertmode();
+void mastermode();
