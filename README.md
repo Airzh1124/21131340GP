@@ -17,7 +17,7 @@
 
 ************Video here*************
 
-**Remember to zoom in your terminal window to appropriate size to get better experience**
+#### **Remember to enlarge your terminal window to full screen for better experience**
 
 ### Storyline
 In the near future, the world teeters on the edge of a massive war. Resources are dwindling, and the stakes for global power have never been higher. In a bid to prevent catastrophic loss on both sides, the world's nations agree to an unprecedented challenge: a high-stakes game known as "RoboConflict: Global Showdown."
