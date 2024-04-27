@@ -10,6 +10,7 @@ void masterRobotattack(Map &map, Map &map1, int &ran){
               } 
             }
     }
+
     int chosen = randomgenerator(targets.size(), 0, ran); //作弊选中一个vector
     int x = targets[chosen][0];
     int y = targets[chosen][1];

@@ -269,6 +269,7 @@ void mastermode() {
         changeValue(positions, map2, map3);
 
         if (gameStatus(map2) == true){
+        egg();
         rmcaution();
         instruction("Congratulations! You have sunk all of the opponent's ships! You are the winner of this game! (press any key to exit)");
         refresh();
@@ -292,6 +293,7 @@ void mastermode() {
         getch();//maybe some instruction? or diaplaying the map4 continuously
         
         if (gameStatus(map1) == true){
+        egg();
         rmcaution();
         instruction("OHHH NOOOO! The robot have sunk all of your ships, you lost this game! (press any key to exit)");
         refresh();

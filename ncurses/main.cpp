@@ -4,6 +4,7 @@
 #include "playeractions.h"
 #include "map.h"
 #include "shipplacement.h"
+#include "egg.h"
 #include "robotactions.h"
 #include "Starting_screen.h"
 #include "modes.h"
