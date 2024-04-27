@@ -93,7 +93,6 @@ void easymode() {
         instruction("Above is the placement for the surviving ship of the robot (press any key to exit)");
         refresh();
         map2.printDMap();
-        map4.printDMap();
         getch();
         break;
         }
@@ -193,7 +192,6 @@ void hardmode() {
         instruction("Above is the placement for the surviving ship of the robot (press any key to exit)");
         refresh();
         map2.printDMap();
-        map4.printDMap();
         getch();
         break;
         }
@@ -301,8 +299,7 @@ void mastermode() {
         rmcaution();
         instruction("Above is the placement for the surviving ship of the robot (press any key to exit)");
         refresh();
-        map2.printCMap();
-        map4.printDMap();
+        map2.printDMap();
         getch();
         break;
         }

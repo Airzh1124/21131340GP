@@ -1,30 +1,24 @@
-#include <fstream>
-#include <iostream>
-#include <ncurses.h>
-#include <chrono>
-#include <string>
-#include <thread>
-#include <sstream>
-using namespace std;
+#include "egg.h"
 
 void egg() {
-    const  string relativePath = "store/storeframe_";
+    const string relativePath = "store/storeframe_";
+    WINDOW* buffer = newpad(1000, 1000);
 
     for (int i = 0; i <= 606; i++) {
         ifstream file(relativePath + to_string(i) + ".txt");
 
         if (file) {
             string line;
-           while (getline(file, line)) {
-            printw("%s", line.c_str());
-            printw("\n");
+            int line_num = 0;
+            werase(buffer);
+            while (getline(file, line)) {
+                mvwprintw(buffer, line_num++, 0, "%s", line.c_str());
         }
+        prefresh(buffer, 0, 0, 0, 0, LINES - 1, COLS - 1);
         }
-        refresh();
         std::this_thread::sleep_for(std::chrono::milliseconds(1000/30));
-        clear();
         file.close();
     }
-    
-return;
+    delwin(buffer);
+    return;
 }
