@@ -8,4 +8,4 @@
 using namespace std;
 
 void egg();
-// start the egg function
+// Shows the bonus ASCII art video 
