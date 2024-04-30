@@ -55,9 +55,9 @@ public:
     Print the map of the player
     */
 
-    void printDMap();
+    void printDMap();   //Maps for showing the ships placement with differnet labels 'ABCD'
 
-    void printCMap();
+    void printCMap();   //Showing the maps being attacted by the robots
     /*
     Print the map of the computer
     */
