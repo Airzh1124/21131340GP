@@ -62,6 +62,16 @@ You will have to do the following:
    - For storing the game map, we defined a class (see map.h)
    - We used vector as the major STL container
    - We used list to contain the array of available ships' shape
+- **Dynamic memory management**
+   - The Map (The name of the class defined) was used to store the game status:
+      - Whenever the player or the robot guesses, the elements within the class are being updated
+   - The list used to store the shape of the map are being constantly updated (Corresponding ship size are being removed when placed down) 
+- **File input / output**
+   - We used n.curses to defined some new functions: instruction; caution; information to print out
+   - They are defined based on the function 'mvprint()' in ncurses
+   - We used 'getch' to get users' inputs
+- **Program codes in multiple files**
+   - It allows separate compliation of the code, and we can modify each part of the code and run them separately.
 - **"Intelectual AI"**
    - We grant robots intellegence by allow them to cheat - _Every 3 turns, they were about to directly locate one of the player's ship_
 - **In-game decorations**
