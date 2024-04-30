@@ -20,7 +20,7 @@ int main() {
         getch();
         return 0;
     }
-    start_color();
+    start_color();      //Giving each sets of boats their unique colours
     init_pair(1, COLOR_RED, COLOR_BLACK);
     init_pair(2, COLOR_YELLOW, COLOR_BLACK);
     init_pair(3, COLOR_BLUE, COLOR_BLACK);
@@ -31,7 +31,7 @@ int main() {
 
 
     int yMax, xMax;
-    getmaxyx(stdscr, yMax, xMax);
+    getmaxyx(stdscr, yMax, xMax);    //Getting the size of the user's window 
 
     WINDOW * menuwin = newwin(6, xMax - 12, yMax -8, 5);
     box(menuwin, 0, 0);
@@ -48,7 +48,7 @@ int main() {
         for (int i = 0; i < 4; i ++) {
             if (i == highlight) {
                 wattron(menuwin, A_REVERSE);
-                mvwprintw(menuwin, i + 1, 1, choices[i].c_str());
+                mvwprintw(menuwin, i + 1, 1, choices[i].c_str());     //User's meun selection
                 wattroff(menuwin, A_REVERSE);
             } else {
                 mvwprintw(menuwin, i + 1, 1, choices[i].c_str());
@@ -58,7 +58,7 @@ int main() {
 
         switch(choice) {
             case KEY_UP:
-                if (highlight > 0) highlight--;
+                if (highlight > 0) highlight--;    //User's selecting the former or latter choice in the menu 
                 break;
             case KEY_DOWN:
                 if (highlight < 3) highlight++;
@@ -74,7 +74,7 @@ int main() {
     rmcaution();
     int n = highlight + 1;
 
-    while (true){
+    while (true){                //Opening the corresponding mode
         if (n == 4){
             break;
         }
