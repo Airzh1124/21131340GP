@@ -57,7 +57,7 @@ public:
 
     void printDMap();   //Maps for showing the ships placement with differnet labels 'ABCD'
 
-    void printCMap();   //Showing the maps being attacted by the robots
+    void printCMap();   //Showing the maps being attacked by the robots
     /*
     Print the map of the computer
     */
