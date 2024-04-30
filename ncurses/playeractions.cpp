@@ -31,9 +31,9 @@ void rmcaution() {
     refresh();
 }
 
-void instruction(const string &s) {
+void information(const string &s) {
     int terminalWidth, terminalHeight;
-    getmaxyx(stdscr, terminalHeight, terminalWidth);
+    getmaxyx(stdscr, terminalHeight, terminalWidth);;
 
     for (int i = 1; i <= 4; i++) {
         move(terminalHeight - i, 0);
@@ -47,11 +47,29 @@ void instruction(const string &s) {
     refresh();
 }
 
-int getUserInput(const string &prompt) {
+
+void instruction(const string &s, Map &map){
+    int terminalWidth, terminalHeight;
+    getmaxyx(stdscr, terminalHeight, terminalWidth);;
+
+    int startX = ((terminalWidth-(map.getCols()+1)*3)/2);
+    int startY = 2*map.getRows()+6;
+
+    for (int i = 0; i <= 3; i++) {
+        move(startY + i, 0);
+        clrtoeol();
+    }
+    
+    const char *cstr = s.c_str();
+    mvprintw(startY, startX ,cstr);
+    refresh();
+}
+
+int getUser(const string &prompt) {
     string input;
     
     do {
-        instruction(prompt);
+        information(prompt);
         refresh();
 
         char inputBuffer[100];
@@ -59,12 +77,39 @@ int getUserInput(const string &prompt) {
         input = inputBuffer;
 
         if (!isNumber(input)) {
-            instruction("Invalid input. Please try again. (Press any key to continue)");
+            information("Invalid input. Please try again. (Press any key to continue)");
             getch();
             refresh();
         }
         if (input.empty()){
-          instruction("You did not input anything yet, please try again. (Press any key to continue)");
+          information("You did not input anything yet, please try again. (Press any key to continue)");
+          getch();
+          refresh();
+        }
+
+    } while ((!isNumber(input) | input.empty()));
+
+    return stoi(input);
+}
+
+int getUserInput(const string &prompt, Map &map) {
+    string input;
+    
+    do {
+        instruction(prompt, map);
+        refresh();
+
+        char inputBuffer[100];
+        getstr(inputBuffer);
+        input = inputBuffer;
+
+        if (!isNumber(input)) {
+            instruction("Invalid input. Please try again. (Press any key to continue)",map);
+            getch();
+            refresh();
+        }
+        if (input.empty()){
+          instruction("You did not input anything yet, please try again. (Press any key to continue)",map);
           getch();
           refresh();
         }
@@ -81,21 +126,21 @@ vector<int> getPositions(Map &map){
     int row, col;
 
     map.printDMap();
-    row = getUserInput("Please enter the chosen x position: ");
-    col = getUserInput("Please enter the chosen y position: ");
+    row = getUserInput("Please enter the chosen x position: ",map);
+    col = getUserInput("Please enter the chosen y position: ",map);
     if (row >= 0 && row < map.getCols() && col >= 0 && col < map.getRows()){
       if (map.getCell(row, col) == 0){
-        instruction("");
+        instruction("",map);
         positions.push_back(row);
         positions.push_back(col);
         return positions;
       }else{
-        instruction("You have already chosen this position, please try again!(Press any key to continue)");
+        instruction("You have already chosen this position, please try again!(Press any key to continue)",map);
         getch();
       }
     }
     else{
-      instruction("Coordinates are out of range, please try again!(Press any key to continue)");
+      instruction("Coordinates are out of range, please try again!(Press any key to continue)",map);
       getch();
         }
     }
@@ -110,7 +155,7 @@ void changeValue(vector<int> Postions, Map &map, Map &map1){
   if (value == 0){
     map1.setCell(row, col, 1);
     map1.printDMap();
-    instruction("Oops! You miss the shot!(Press any key to continue)");
+    instruction("Oops! You miss the shot!(Press any key to continue)",map);
     getch();
   }
   else{
@@ -123,7 +168,7 @@ void changeValue(vector<int> Postions, Map &map, Map &map1){
         }
       }
     }
-    instruction("Congratulations! you hit one ship successfully!(Press any key to continue)");
+    instruction("Congratulations! you hit one ship successfully!(Press any key to continue)",map);
     getch();
   }
 

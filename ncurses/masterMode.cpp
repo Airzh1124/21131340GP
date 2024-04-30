@@ -24,7 +24,7 @@ void masterRobotattack(Map &map, Map &map1, int &ran){
                 }
             }
         }
-    instruction("The robot had activated its skill and attacked this coordinate: ");
+    instruction("The robot had activated its skill and attacked this coordinate: ",map1);
     printw("%d %d", x, y);
     return;
 }

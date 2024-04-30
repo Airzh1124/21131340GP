@@ -66,22 +66,22 @@ void getAndplaceShape(Map &map, int Shipnom){
     getmaxyx(stdscr, max_y, max_x);
     do{
         printShape();
-        Shiplen = getUserInput("Please enter the length of the ship: ");
-        Shipwei = getUserInput("Please enter the width of the ship: ");
+        Shiplen = getUser("Please enter the length of the ship: ");
+        Shipwei = getUser("Please enter the width of the ship: ");
 
         if (Shapeexist(Shiplen, Shipwei) == false){
-            instruction("Sorry, the shape you entered is not in the list, please try again.(Press any key to continue)");
+            information("Sorry, the shape you entered is not in the list, please try again.(Press any key to continue)");
             getch();
         }
 
     }while (Shapeexist(Shiplen, Shipwei) == false);
 
     do{
-        Shiprow = getUserInput("Please enter the chosen x position: ");
-        Shipcol = getUserInput("Please enter the chosen y position: ");
+        Shiprow = getUser("Please enter the chosen x position: ");
+        Shipcol = getUser("Please enter the chosen y position: ");
 
         if (overlap(map, Shiprow, Shipcol, Shiplen, Shipwei) == true){
-            instruction("Sorry you cannot place here, please try in another cell.(Press any key to continue)");
+            information("Sorry you cannot place here, please try in another cell.(Press any key to continue)");
             getch();
         }
 

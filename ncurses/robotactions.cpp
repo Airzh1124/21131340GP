@@ -62,7 +62,7 @@ void robotattack(Map &map, Map &map1, int &ran){
             }
         }
     }
-    instruction("The robot had randomly attacked this coordinate: ");
+    instruction("The robot had randomly attacked this coordinate: ",map1);
     printw("%d %d", Shiprow, Shipcol);
     return;
 }

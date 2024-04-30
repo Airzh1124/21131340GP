@@ -14,14 +14,18 @@ void caution(const string &s);
 void rmcaution();
 // remove the caution message on the screen
 
-int getUserInput(const string &prompt);
+int getUser(const string &prompt);
+
+int getUserInput(const string &prompt,Map &map);
 /*
 Arguments:
     const string &prompt: the prompt message
 */
 // get the input from user(only number)
 
-void instruction(const string &s);
+void information(const string &s);
+
+void instruction(const string &s,Map &map);
 /*
 Arguments:
     const string &s: the instruction message

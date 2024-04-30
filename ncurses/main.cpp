@@ -16,7 +16,7 @@ int main() {
     keypad(stdscr, false); //unables the interpretation of function keys as special control sequences
 
     if (has_colors() == false){
-        instruction("Sorry, your computer does not support colour, but you could still enjoy the black & white version of the game :)");
+        information("Sorry, your computer does not support colour, but you could still enjoy the black & white version of the game :)");
         getch();
         return 0;
     }
@@ -94,7 +94,7 @@ int main() {
         }
     }
     //maybe ending animation or ending words here
-    instruction("Wish to see you again soon, have a nice dayyy :)");
+    information("Wish to see you again soon, have a nice dayyy :)");
     refresh();
     getch();
 
