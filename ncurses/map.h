@@ -13,6 +13,10 @@ public:
     Map(int rows, int cols);
     /*
     Constructor of the Map class
+
+    Args:
+        rows (int): number of rows
+        cols (int): number of columns
     */
     int getRows();
     /*
@@ -44,11 +48,6 @@ public:
         x (int): x coordinate
         y (int): y coordinate
         value (int): the value to set
-
-    Representations:
-        0 represents empty cell
-        1 represents the selected cell
-        2 represents the destroyed cell
     */ 
 
     void printPMap();
