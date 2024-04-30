@@ -3,7 +3,7 @@
 using namespace std;
 
 void easymode() {
-    int maplen, mapwei, count = 0;
+    int maplen, mapwei, count = 0;  //maplen means length of map; mapwei means width of map
 
     do{
         count++;
@@ -33,16 +33,16 @@ void easymode() {
     mapwei = getUser("Please enter the width of the map: ");
     }while (maplen < 8 || maplen > 12 || mapwei < 8 || mapwei > 12);
     
-    Map map1(maplen,mapwei);
-    Map map2(maplen,mapwei);
-    Map map3(maplen,mapwei);
-    Map map4(maplen,mapwei);
+    Map map1(maplen,mapwei);  //map1 stored the ships placement of the user
+    Map map2(maplen,mapwei);  //map2 stored the ships placement of the robots
+    Map map3(maplen,mapwei);  //map3 stored the resultant map after user's attack 
+    Map map4(maplen,mapwei);  //map4 stored the resultant map after robot's attack, all 4 maps are being modified when performing certain actions
 
     information("Please wait a moment while our robot prepares the map.");
     
     robotplacement(map2);
     rmcaution();
-    int Shipnom = 2, ran = 0;
+    int Shipnom = 2, ran = 0;   //Shipnom means Ship number 
     while (Shipshape.empty() == false){
         map1.printDMap();
         getAndplaceShape(map1, Shipnom);
