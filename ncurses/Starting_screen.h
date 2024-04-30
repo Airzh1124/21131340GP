@@ -8,4 +8,4 @@ extern const vector<string> ship;
 
 void Print_map(const vector<string>& art);
 
-//Function for printing out the map in the starting screen
+//Function for printing out the ASCII art in the starting screen
