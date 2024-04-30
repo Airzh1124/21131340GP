@@ -36,6 +36,11 @@ Prepare your wits, strategize carefully, and remember: the future of your nation
  
 `./main`
 
+```
+#PS. One have to ensure that they are within the ncurse directory before game initialization
+```
+
+
 **Be sure to wait for a moment before continuing to the next process**
 That's ALL!
 ### Control 
