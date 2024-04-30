@@ -52,7 +52,7 @@ void instruction(const string &s, Map &map){
     int terminalWidth, terminalHeight;
     getmaxyx(stdscr, terminalHeight, terminalWidth);;
 
-    int startX = ((terminalWidth-(map.getCols()+1)*3)/2);
+    int startX = ((terminalWidth-(map.getCols()+1)*3)/2 - 8);
     int startY = 2*map.getRows()+6;
 
     for (int i = 0; i <= 3; i++) {
