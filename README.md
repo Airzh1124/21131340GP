@@ -108,6 +108,11 @@ fi
 echo "Done!"
 ```
 
+ - The library is mainly used for showing a **separate game window** using the `printw()` function
+ - Used for a **buffer window** while displaying the ASCII video, to minimize flickering of the screen while switching between frames
+ - Used for getting the user's input/output
+ - Adjusting the position of showing different parts of the game (eg. Game map) 
+ - For text colouring (eg. Colour of the ships) 
 # Group members
 1. Ning Yi Fan 3036183511
 2. Zheng Han 3036098493
