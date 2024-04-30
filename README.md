@@ -12,7 +12,9 @@
 
 3. [Features implemented](#Features-implemented)  
 
-4. [Group members](#Group-members)
+4. [Non Standard Libraries](#Non-standard_libraries)
+
+5. [Group members](#Group-members)
 
 
 # Game Preview
@@ -80,6 +82,31 @@ You will have to do the following:
 - **Users' selection**
    - Developped a user meun for mode choosing
    - User can generate corresponding map size based on their favour
+
+# Non standard libraries
+   - We used the `ncurses.h` library
+   - The library was installed in the academy serve already, but one need to follow the following to install the library:
+```
+#!/bin/bash
+
+if [ ! -d ncurses ]
+then 
+    echo "Downloading ncurses..."
+    git clone https://github.com/mirror/ncurses.git
+    echo "Downloaded successfully!"
+
+    cd ncurses
+    mkdir ~/local
+    ./configure --prefix ~/local
+
+    echo "Installing ncurses..."
+    make -j
+    make -j install
+    echo "Installed successfully!"
+fi
+
+echo "Done!"
+```
 
 # Group members
 1. Ning Yi Fan 3036183511
