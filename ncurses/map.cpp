@@ -1,5 +1,7 @@
 #include "map.h"
 
+//Details of each functions are included in the map.h file 
+
 Map::Map(int rows, int cols) : grid(rows, vector<int>(cols, 0)) {}
 
 int Map::getRows() {
