@@ -8,9 +8,12 @@
 
 2. [Game initialization](#Game-initialization)  
    I. [Control](#Control)  
-   II. [Game Process](#Game-Process)  
+   II. [Game Process](#Gaming-Process-(Rules))  
 
 3. [Features implemented](#Features-implemented)  
+
+4. [Group members](#Group-members)
+
 
 # Game Preview
 ## Game Trailer 
@@ -40,7 +43,7 @@ That's ALL!
 - Press _Ctrl + C_ if you wish to **leave** the game early!
 
 
-### Gaming process
+### Gaming process (Rules)
 You will have to do the following: 
 
 - **Enter** the map size that you wish to play on
@@ -49,7 +52,7 @@ You will have to do the following:
  - Placing the ships by entering the **x-coordinate (no. row) first**, **followed by the y-coordinate (no.column)**
  - The coordinate you entered will be the **_coordinate of the Top Left corner of the ship_**
 - Enter the coordinate of the places that you wish to hit
-
+- Take turns between the player and the robots to guess where the ships are
 
 
 # Features implemented
@@ -58,7 +61,18 @@ You will have to do the following:
 - **Data structure used**
    - For storing the game map, we defined a class (see map.h)
    - We used vector as the major STL container
+   - We used list to contain the array of available ships' shape
 - **"Intelectual AI"**
    - We grant robots intellegence by allow them to cheat - _Every 3 turns, they were about to directly locate one of the player's ship_
 - **In-game decorations**
-   - ASCII arts, colours pocesses by ncurses were used 
+   - Short end game video generated using ASCII arts
+   - Ships are made obvisous using text colours 
+- **Users' selection**
+   - Developped a user meun for mode choosing
+   - User can generate corresponding map size based on their favour
+
+# Group members
+1. Ning Yi Fan
+2. Zheng Han
+3. Yin Jie 3036097243
+4. Fong Shu Hung 3036073077
