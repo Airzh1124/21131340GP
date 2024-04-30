@@ -18,7 +18,7 @@
 # Game Preview
 ## Game Trailer 
 
-************Video here*************
+[Introduce to Battleship Game - By Group180: Video Link ](https://youtu.be/n7TqSMGEfxE)
 
 #### **Remember to enlarge your terminal window to full screen for better experience**
 
@@ -72,7 +72,7 @@ You will have to do the following:
    - User can generate corresponding map size based on their favour
 
 # Group members
-1. Ning Yi Fan
-2. Zheng Han
+1. Ning Yi Fan 3036183511
+2. Zheng Han 3036098493
 3. Yin Jie 3036097243
 4. Fong Shu Hung 3036073077
